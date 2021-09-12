@@ -8,6 +8,7 @@ module.exports = app => {
         const user = { ...req.body }
 
         try {
+            
             isNullValue(user.name, "Preencha o campo de usuário.")
             isNullValue(user.lastName, "Preencha o sobrenome nome.")
             isNullValue(user.email, "Preencha o campo de e-mail.")
@@ -17,9 +18,7 @@ module.exports = app => {
         } catch(msg) {
             return res.status(400).send(msg)
         }
-        
-        console.log(uuid())
-        
+    
         const query = [
             {
                 query: "INSERT INTO user (id, createat, email, lastname, name, password) VALUES (?,?,?,?,?,?)",
@@ -29,7 +28,6 @@ module.exports = app => {
 
         try {
             const resDB = await app.db.batch(query, { prepare: true })
-            console.log(resDB)
         }catch(msg) {
             res.status(500).send(`Erro no servidor.\n ${msg}`)
         }
