@@ -1331,6 +1331,11 @@ uuidv4@^6.2.12:
     "@types/uuid" "8.3.1"
     uuid "8.3.2"
 
+uuidv5@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/uuidv5/-/uuidv5-1.0.0.tgz#af98e9befcb462c0ab6c752edd082cb52fb530a0"
+  integrity sha1-r5jpvvy0YsCrbHUu3QgstS+1MKA=
+
 vary@^1, vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"

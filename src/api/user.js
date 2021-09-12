@@ -2,7 +2,7 @@ const { uuid } = require("uuidv4")
 
 module.exports = app => {
 
-    const { isNullValue, isEquals } = app.src.utils.validationUser
+    const { isNullValue, isEquals, emailVerification } = app.src.utils.validationUser
 
     const insertUser = async (req, res) => {
         const user = { ...req.body }
@@ -12,8 +12,10 @@ module.exports = app => {
             isNullValue(user.name, "Preencha o campo de usuário.")
             isNullValue(user.lastName, "Preencha o sobrenome nome.")
             isNullValue(user.email, "Preencha o campo de e-mail.")
+            emailVerification(user.email)
             isNullValue(user.password, "Preencha o campo senha.")
             isEquals(user.password, user.confirmPassword, "Senha invalida.")
+            
             
         } catch(msg) {
             return res.status(400).send(msg)
@@ -27,7 +29,7 @@ module.exports = app => {
         ]
 
         try {
-            const resDB = await app.db.batch(query, { prepare: true })
+            await app.db.batch(query, { prepare: true })
         }catch(msg) {
             res.status(500).send(`Erro no servidor.\n ${msg}`)
         }
