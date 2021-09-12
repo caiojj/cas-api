@@ -63,6 +63,7 @@ Descobrindo em qual ip o container docker esta rodando
 Um exemplo de execução do comando logo abaixo
 
 ![Terminal](./Image/terminal.png)
+
 O que nos importa ali é o IPAddress: "172.12.0.2", que no meu caso é este, no seu pc possivelmente sera outro.
 
 ```bash
