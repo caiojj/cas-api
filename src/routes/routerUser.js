@@ -1,5 +1,7 @@
 module.exports = app => {
-    app.route("/users")
-        .post(app.src.api.user.insertUser)
-        .get(app.src.api.user.getUsers)
+    app.route("/login")
+        .post(app.src.api.user.login)
+
+    app.route("/createAccount")
+        .post(app.src.api.user.createAccount)
 }

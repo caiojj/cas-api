@@ -4,7 +4,7 @@ module.exports = app => {
 
     const { isNullValue, isEquals, emailVerification } = app.src.utils.validationUser
 
-    const insertUser = async (req, res) => {
+    const createAccount = async (req, res) => {
         const user = { ...req.body }
 
         try {
@@ -36,9 +36,9 @@ module.exports = app => {
         res.status(200).send("Cadastro finalizado com sucesso!")
     }
 
-    const getUsers = async (req, res) => {
+    const login = async (req, res) => {
         return res.status(200).send()
     }
     
-    return { insertUser, getUsers }
+    return { createAccount, login }
 }
