@@ -64,7 +64,8 @@ Um exemplo de execução do comando logo abaixo
 
 ![Terminal](./Image/terminal.png)
 
-O que nos importa ali é o IPAddress: "172.12.0.2", que no meu caso é este, no seu pc possivelmente sera outro.
+O que nos importa ali é o IPAddress: "172.12.0.2", que no meu caso é este, no seu pc possivelmente sera outro. Este ponto é extremamente importante para que o projeto rode.
+Abra o projeto e verifique se o valor da variavel CONTAINERIPADDRESS que esta contida no arquivo .env bate com o valor impresso no seu terminal.
 
 ```bash
 docker inspect container_name | grep IPAddress
