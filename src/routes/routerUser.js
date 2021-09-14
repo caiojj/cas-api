@@ -3,5 +3,5 @@ module.exports = app => {
         .post(app.src.api.user.login)
 
     app.route("/createAccount")
-        .post(app.src.api.user.createAccount)
+        .post(app.src.api.user.hasAccount)
 }

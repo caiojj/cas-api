@@ -10,7 +10,7 @@ const app = express()
 
 clientCas.connect(function(err) {
     if (err) console.log(err)
-    else console.log("Connect cassandra db")
+    else console.log("Connect cassandra db 🚥 ")
 })
 
 app.db = clientCas
@@ -22,7 +22,6 @@ app.use(
     express.static(path.resolve(__dirname, "tmp", "midia"))
 )
 
-
 consign()
     .then("./src/config/middlewares.js")
     .then("./src/utils/validationUser.js")
@@ -31,5 +30,5 @@ consign()
     .into(app)
 
 app.listen(process.env.PORT, () => {
-    console.log(`Backend executando na porta ${process.env.PORT}` )
+    console.log(`Backend executando na porta ${process.env.PORT} 🚀 ` )
 })
